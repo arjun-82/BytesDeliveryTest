@@ -1,0 +1,12 @@
+->It sounds like the category list disappears when you tap on a category because the fetchProducts() function updates the state, triggering a rebuild of the UI. However, the category list should still be present unless something is resetting the state incorrectly.
+
+Possible Issue:
+When you call fetchProducts(categoryId: category.id), it resets the state, which may cause the category list to disappear.
+The selectedCategoryId is being updated, but it might not persist correctly across state updates.
+Solution: Ensure Categories Persist
+Modify your fetchProducts() function so that it does not clear the categories list when fetching new products.
+
+Update fetchProducts() in ProductListController
+Modify how the state updates so that categories remain unchanged
+
+->use for generate the ProductListState
